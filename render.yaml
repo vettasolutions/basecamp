@@ -20,7 +20,6 @@ services:
     dockerfilePath: dockerfile-prs
     initialDeployHook: /usr/bin/renderDeployHook.sh
     envVars:
-      - fromGroup: pr-settings
       - key: PGHOST
         fromDatabase:
           name: jaffle_db_pg_13
