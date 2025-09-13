@@ -4,18 +4,19 @@ databases:
   - name: jaffle_db_pg_13
     ipAllowList: []
     postgresMajorVersion: 13
-    plan: basic-1gb
+    plan: basic-256mb
     previewPlan: basic-256mb
 
 services:
   - type: pserv
     env: docker
     name: headless-browser
+    plan: starter
     dockerfilePath: docker/Dockerfile.headless-browser
   - type: web
     env: docker
     name: lightdash
-    plan: standard
+    plan: starter
     dockerContext: .
     dockerfilePath: dockerfile-prs
     initialDeployHook: /usr/bin/renderDeployHook.sh
